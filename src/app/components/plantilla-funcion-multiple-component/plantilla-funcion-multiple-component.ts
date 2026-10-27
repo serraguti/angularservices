@@ -9,7 +9,7 @@ import { ServicePlantilla } from '../../services/service.plantillas';
   templateUrl: './plantilla-funcion-multiple-component.html',
 })
 export class PlantillaFuncionMultipleComponent implements OnInit {
-  @ViewChild("selectfuncion") selectFuncion!: ElementRef;
+  @ViewChild("selectfunciones") selectFunciones!: ElementRef;
   public personas!: Array<Plantilla>;
   public funciones!: Array<string>;
 
@@ -26,8 +26,14 @@ export class PlantillaFuncionMultipleComponent implements OnInit {
   }
 
   async mostrarPlantilla(): Promise<void> {
-    let funcion = this.selectFuncion.nativeElement.value;
-    this.personas = await this._service.getPlantillaByFuncionAsync(funcion);
+    let aux = [];
+    //el control html select tiene una propiedad options
+    for (let opcion of this.selectFunciones.nativeElement.options){
+      if (opcion.selected == true){
+        aux.push(opcion.value);
+      }
+    }
+    this.personas = await this._service.getPlantillaFunciones(aux);
     this._cdr.detectChanges();
   }
 }

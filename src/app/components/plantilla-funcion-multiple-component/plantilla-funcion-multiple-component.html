@@ -1,7 +1,7 @@
 <h1 style="color:blue">Plantilla función múltiple</h1>
 <form #plantillaform="ngForm">
     <label>Seleccione una función</label>
-    <select name="selectfuncion" #selectfuncion class="form-control">
+    <select name="selectfunciones" #selectfunciones class="form-control" multiple size="5">
         @for (fun of funciones; track fun){
             <option>{{fun}}</option>
         }
