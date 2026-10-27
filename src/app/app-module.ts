@@ -13,6 +13,7 @@ import { CochesApiComponent } from './components/coches-api-component/coches-api
 import { ServicePlantilla } from './services/service.plantillas';
 import { FormsModule } from '@angular/forms';
 import { PlantillaFuncionSimpleComponent } from './components/plantilla-funcion-simple-component/plantilla-funcion-simple-component';
+import { PlantillaFuncionMultipleComponent } from './components/plantilla-funcion-multiple-component/plantilla-funcion-multiple-component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PlantillaFuncionSimpleComponent } from './components/plantilla-funcion-
     MenuComponent,
     CochesApiComponent,
     PlantillaFuncionSimpleComponent,
+    PlantillaFuncionMultipleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
